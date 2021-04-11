@@ -86,7 +86,6 @@ const Form = ({
   };
 
   const dropoffSelected = (autocompleteItem) => {
-    console.log(autocompleteItem);
     setRideDetails({ ...rideDetails, dropoff: autocompleteItem.description });
     document.getElementById("dropoff").value = autocompleteItem.description;
     const place = new window.google.maps.places.PlacesService(
@@ -107,6 +106,7 @@ const Form = ({
             onChange={initAutoComplete}
             placeholder="Pickup address"
             id="Pickup"
+            autoComplete="off"
           />
           <AutoCompleteComponent
             autocompleteClicked={PickupSelected}
@@ -120,6 +120,7 @@ const Form = ({
             onChange={initAutoComplete}
             placeholder="dropoff address"
             id="dropoff"
+            autoComplete="off"
           />
           <AutoCompleteComponent
             autocompleteClicked={dropoffSelected}

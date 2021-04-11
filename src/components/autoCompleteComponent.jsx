@@ -1,7 +1,7 @@
 const AutoCompleteComponent = ({ autocompleteClicked, autocomplete }) => {
   return (
     <div className="autocomplete-container">
-      {autocomplete.map((item, index) => {
+      {autocomplete?.map((item, index) => {
         return (
           <div
             key={index}
